@@ -13,9 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-
 import.com.stockmarket.stockexchange.service.StockExchangeService;
 
 @RestController
@@ -31,13 +28,14 @@ public class StockExchangeController {
     	}
 	
 	@GetMapping("/stockexchange/all")
-	public ResponseEntity<List<StockExchange>> findAll(){
-       	System.out.println(stockExchangeService.getAllStockExchange().size());
-        	return new ResponseEntity<List<Transaction>>(stockExchangeService.getAllStockExchange(), HttpStatus.OK);
+	public List<StockExchange> findAll()
+	{
+       	List<StockExchange> stockExchanges = stockExchangeService.getAllStockExchange();
+		return stockExchanges;
     	}
 
 	@GetMapping("/stockexchange/{id}")
-	public Optional<StockExchange> fineOne (@PathVariable int id)  {
+	public Optional<StockExchange> fineOne(@PathVariable int id)  {
         	Optional<StockExchange> stockExchange = stockExchangeService.getStockExchange(id);
 		return stockExchange;
     	}
