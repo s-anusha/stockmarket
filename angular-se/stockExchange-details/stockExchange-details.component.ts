@@ -30,6 +30,6 @@ export class StockExchangeDetailsComponent implements OnInit {
   }
 
   list(){
-    this.router.navigate(['stockexchange']);	// USE
+    this.router.navigate(['stockexchange']);
   }
 }

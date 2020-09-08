@@ -35,7 +35,7 @@ export class StockExchangesListComponent implements OnInit {
         error => console.log(error));
   }
 
-  stockExchangeDetails(id: number){	// USE
+  stockExchangeDetails(id: number){
     this.router.navigate(['details', id]);
   }
 }

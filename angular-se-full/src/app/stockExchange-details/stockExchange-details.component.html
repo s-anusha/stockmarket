@@ -1,0 +1,21 @@
+<h2>Stock Exchange Details</h2> 
+
+<hr/>
+<div *ngIf="employee">
+  <div>
+    <label><b>Name: </b></label> {{stockExchange.name}}
+  </div>
+  <div>
+    <label><b>Brief: </b></label> {{stockExchange.brief}}
+  </div>
+  <div>
+    <label><b>Contact Address: </b></label> {{stockExchange.contactAddress}}
+  </div>
+  <div>
+    <label><b>Remarks: </b></label> {{stockExchange.remarks}}
+  </div> 
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Employee List</button><br>

@@ -34,7 +34,7 @@ export class UpdateStockExchangeComponent implements OnInit {
       .subscribe(data => {
         console.log(data);
         this.stockExchange = new StockExchange();
-        this.gotoList(); // USE
+        this.gotoList();
       }, error => console.log(error));
   }
 
@@ -43,6 +43,6 @@ export class UpdateStockExchangeComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/stockexchange']);	// USE
+    this.router.navigate(['/stockexchange']);
   }
 }

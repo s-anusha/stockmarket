@@ -1,0 +1,28 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Stock Exchanges List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Brief</th>
+          <th>Contact Address</th>
+		  <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stockExchange of stockExchanges | async">
+          <td>{{stockExchange.name}}</td>
+          <td>{{stockExchange.brief}}</td>
+		  <td>{{stockExchange.contactAddress}}</td>
+		  <td>{{stockExchange.remarks}}</td>
+          <td><button (click)="deleteStockExchange(stockExchange.id)" class="btn btn-danger">Delete</button>
+              <button (click)="stockExchangeDetails(stockExchange.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
